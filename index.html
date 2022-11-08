@@ -9,22 +9,23 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <div>
-        <!-- add a link to the saved recipes here -->
+    <div class="row">
+        <a href="./saved-recipes.html">Saved Recipes</a>
     </div>
     <h1 class="center-align black-text">Recipe Roulette</h1>
     <div id="homeDisplay" class="center-align container">
-        <form id="display">
-            <select style="display:block; text-align: center;">
-            <option value="choose">Filter By Catagory</option>
-            <option value="beef">Meat</option>
-            <option value="chicken">Veggies</option>
-            <option value="fish">Desert</option>
-            </select>
-            <button id="start">I'M FEELING LUCKY!</button>
-        </form>
+        <!-- search -->
+        <div class="row">
+            <input class="col s-9" id="input" type="text" placeholder="Search for a recipe...">
+            <button class="col s-3" id="search-btn" type="submit">Search</button>
+        </div>
+        <!-- Random Meal Button -->
+        <button id="start">Random Meal!</button>
     </div>
-    <!-- possibly a placeholder image to fill up the bottom of the screen (possibly a wheel of fortune animation) -->
+    <!-- result display -->
+    <div id="result" class="container center-align">
+
+    </div>
     <script src="./assets/js/materialize.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
