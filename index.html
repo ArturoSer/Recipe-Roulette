@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Roulette</title>
     <link rel="stylesheet" href="./assets/css/materialize.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-    <div>
-        <!-- add a link to the saved recipes here -->
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="saved-recipes.html">Saved Recipes</a>
+      <a href="#contact">Contact</a>
     </div>
-    <h1 class="center-align black-text">Recipe Roulette</h1>
-    <div id="homeDisplay" class="center-align container">
-        <form id="display">
-            <select style="display:block; text-align: center;">
-            <option value="choose">Filter By Catagory</option>
-            <option value="beef">Meat</option>
-            <option value="chicken">Veggies</option>
-            <option value="fish">Desert</option>
-            </select>
-            <button id="start">I'M FEELING LUCKY!</button>
+    <div class="container">
+      <!-- add a link to the saved recipes here -->
+      <h1 id="home">Recipe Roulette</h1>
+      <div id="homeDisplay" class="center-align">
+        <div class="flex">
+          <form class="flex" id="submit">
+            <input type="text" id="search-input" placeholder="Enter Keyword"/>
+          </form>
+          <button class="search-btn" type="submit" id="search">Search</button>
+          <button class="random-btn" id="start">I'M FEELING LUCKY!</button>
+        </div>
+        <!-- <button id="start">I'M FEELING LUCKY!</button> -->
         </form>
+      </div>
+    </div>
+    <!-- API results fed into these divs -->
+    <div> placeholder </div>
+    <div> placeholder </div>
+    <div> placeholder </div>
+    <div>
+      <img class="btm-pic" src="chef.jpg">
     </div>
     <!-- possibly a placeholder image to fill up the bottom of the screen (possibly a wheel of fortune animation) -->
     <script src="./assets/js/materialize.js"></script>
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
+  <footer class="navbar">
+    <a href="#home">Home</a>
+    <a href="#saved">Saved Recipes</a>
+    <a href="#contact">Contact</a>
+  </footer>
+  <p>Copyright &copy; 2022, Our Team, All rights reserved</p>
 </html>
