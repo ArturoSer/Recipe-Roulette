@@ -1,24 +1,34 @@
-var homeEl = document.querySelector('#homeDisplay');
-var displayEl = document.querySelector('#display');
-var startEl = document.querySelector('#start');
+const homeEl = document.querySelector('#homeDisplay');
+const displayEl = document.querySelector('#display');
+const randomBtn = document.querySelector('#rand-btn');
+const searchBtn = document.querySelector('#search-btn');
 
-// Fetching response from API 
-fetch('https://www.themealdb.com/api/json/v1/1/random.php').then((response) => {
-    return response.json()
-}).then((data) => {
-    console.log(data)
-});
+// Random Meal Generator 
+function getRandom() {
+    fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 
-async function getRandomMeal() {
-    const resp = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
-    const respData = await resp.json();
-    const randomMeal = respData.meals[0];
-    console.log(randomMeal);
+        .then((response) => {
+        return response.json()
+        })
 
-    addMeal(randomMeal, true);
+        .then((data) => {
+        console.log(data)
+        })
 }
 
-getRandomMeal();
+function searchMeal() {
+    fetch('www.themealdb.com/api/json/v1/1/search.php?s= VALUE')
+        .then(response => response.json())
+        .then(data => {
+
+        })
+}
+
+// calls for a random meal when the page is first loaded
+getRandom();
 
 
 // Adding event listener for when random button is clicked
+
+searchBtn.addEventListener('click', searchMeal);
+randomBtn.addEventListener('click', getRandom);
