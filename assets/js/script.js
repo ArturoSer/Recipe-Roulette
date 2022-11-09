@@ -9,8 +9,16 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php').then((response) => {
     console.log(data)
 });
 
-// Adding event listener for when start button is clicked
+async function getRandomMeal() {
+    const resp = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
+    const respData = await resp.json();
+    const randomMeal = respData.meals[0];
+    console.log(randomMeal);
+
+    addMeal(randomMeal, true);
+}
+
+getRandomMeal();
 
 
-
-
+// Adding event listener for when random button is clicked
