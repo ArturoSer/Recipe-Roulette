@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Roulette</title>
     <link rel="stylesheet" href="./assets/css/materialize.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-    <div class="row">
-        <a href="./saved-recipes.html">Saved Recipes</a>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="saved-recipes.html">Saved Recipes</a>
+      <a href="#contact">Contact</a>
     </div>
-    <h1 class="center-align black-text">Recipe Roulette</h1>
-    <div id="homeDisplay" class="center-align container">
-        <!-- search -->
-        <div class="row">
-            <input class="col s-9" id="input" type="text" placeholder="Search for a recipe...">
-            <button class="col s-3" id="search-btn" type="submit">Search</button>
+    <div class="container">
+      <!-- add a link to the saved recipes here -->
+      <h1 id="home">Recipe Roulette</h1>
+      <div id="homeDisplay" class="center-align">
+        <div class="flex">
+          <form class="flex" id="submit">
+            <input type="text" id="search-input" placeholder="Enter Keyword"/>
+          </form>
+          <button class="search-btn" type="submit" id="search">Search</button>
+          <button class="random-btn" id="start">I'M FEELING LUCKY!</button>
         </div>
-        <!-- Random Meal Button -->
-        <button id="rand-btn">Random Meal!</button>
+        <!-- <button id="start">I'M FEELING LUCKY!</button> -->
+        </form>
+      </div>
     </div>
-    <!-- result display -->
-    <div id="result" class="container center-align">
-
+    <!-- API results fed into these divs -->
+    <div> placeholder </div>
+    <div> placeholder </div>
+    <div> placeholder </div>
+    <div>
+      <img class="btm-pic" src="chef.jpg">
     </div>
     <script src="./assets/js/materialize.js"></script>
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
+  <footer class="navbar">
+    <a href="#home">Home</a>
+    <a href="#saved">Saved Recipes</a>
+    <a href="#contact">Contact</a>
+  </footer>
+  <p>Copyright &copy; 2022, Our Team, All rights reserved</p>
 </html>
