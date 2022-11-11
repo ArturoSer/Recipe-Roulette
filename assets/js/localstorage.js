@@ -1,7 +1,6 @@
 const savedList = document.getElementById("saved");
 const homeDisplay = document.getElementById("homeDisplay");
 
-
 window.addEventListener("DOMContentLoaded" , () => {
     addListItemtoCard();
 });
@@ -9,7 +8,9 @@ window.addEventListener("DOMContentLoaded" , () => {
 function addListItemtoCard() {
     const data = localStorage.getItem("saved");
     const meal = JSON.parse(data);
-
+if (meal==null) {
+    return;
+}
     if (meal.length == 0) {
         emptyListTag = document.createElement("div");
         emptyListTag.id = "save_null";
