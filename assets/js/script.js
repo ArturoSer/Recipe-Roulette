@@ -46,6 +46,22 @@ function createMeal(meals) {
   }
 }
 
+const mealName = mealDisplay.querySelector('.mealName')
+const mealArea = mealDisplay.querySelector('.meal__area')
+const mealImg = mealDisplay.querySelector('.meal__img')
+const mealIngredients = mealDisplay.querySelector('.meal__ingredients')
+const mealInstructions = mealDisplay.querySelector('.meal__instructions')
+const mealVideo = mealContainer.querySelector('.meal__video')
+const mealVideoContainer = mealContainer.querySelector('.video-container')
+
+mealName.innerText = meal.strMeal
+mealArea.innerText = meal.strArea
+mealImg.src = meal.strMealThumb
+mealImg.alt = meal.strMeal
+let ingredientLists = ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')
+mealIngredients.innerHTML = ingredientLists
+mealInstructions.innerText = meal.strInstructions
+
 // calls for a random meal when the page is first loaded
 getRandom();
 
