@@ -67,4 +67,7 @@ getRandom();
 // Adding event listener for when random button is clicked
 
 searchBtn.addEventListener("click", searchMeal);
-randomBtn.addEventListener("click", randomMeal);
+
+if(randomBtn) {
+  randomBtn.addEventListener("click", getRandom);
+};
