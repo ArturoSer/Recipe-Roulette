@@ -5,9 +5,17 @@ const randomBtn = document.querySelector("#rand-btn");
 const searchBtn = document.querySelector("#search-btn");
 
 // Fetching response from API
-fetch("https://www.themealdb.com/api/json/v1/1/random.php")
-  .then((res) => res.json())
-  .then((data) => displayFoods(data.meals));
+function randomMeal () {
+    fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+        .then((res) => res.json())
+        .then((data) => displayFoods(data.meals));
+}
+
+function searchMeal() {
+  fetch("www.themealdb.com/api/json/v1/1/search.php?s= VALUE")
+    .then((res) => res.json())
+    .then((data) => displayFoods(data.meals));
+}
 
 const displayFoods = (foods) => {
   const foodsDiv = document.createElement("food-items");
@@ -21,28 +29,8 @@ const displayFoods = (foods) => {
         `;
     foodDiv.innerHTML = foodInfo;
     foodsDiv.appendChild(foodDiv);
-  });
-};
-
-// Random Meal Generator
-function getRandom() {
-  fetch("https://www.themealdb.com/api/json/v1/1/random.php")
-    .then((response) => {
-      return response.json();
-    })
-
-    .then((data) => {
-      console.log(data);
-    });
+  })
 }
-
-function searchMeal() {
-  fetch("www.themealdb.com/api/json/v1/1/search.php?s= VALUE")
-    .then((response) => response.json())
-    .then((data) => {});
-}
-
-//document.getElementById("start").addEventListener("click", homeEl);
 
 function createMeal(meals) {
   const ingredients = [];
@@ -58,11 +46,20 @@ function createMeal(meals) {
   }
 }
 
-function searchMeal() {
-  fetch("www.themealdb.com/api/json/v1/1/search.php?s= VALUE")
-    .then((response) => response.json())
-    .then((data) => {});
-}
+const mealName = mealDisplay.querySelector('.mealName')
+const mealArea = mealDisplay.querySelector('.meal__area')
+const mealImg = mealDisplay.querySelector('.meal__img')
+const mealIngredients = mealDisplay.querySelector('.meal__ingredients')
+const mealInstructions = mealDisplay.querySelector('.meal__instructions')
+const mealVideoContainer = mealContainer.querySelector('.video-container')
+
+mealName.innerText = meal.strMeal
+mealArea.innerText = meal.strArea
+mealImg.src = meal.strMealThumb
+mealImg.alt = meal.strMeal
+let ingredientLists = ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')
+mealIngredients.innerHTML = ingredientLists
+mealInstructions.innerText = meal.strInstructions
 
 // calls for a random meal when the page is first loaded
 getRandom();
@@ -70,4 +67,7 @@ getRandom();
 // Adding event listener for when random button is clicked
 
 searchBtn.addEventListener("click", searchMeal);
-randomBtn.addEventListener("click", getRandom);
+
+if(randomBtn) {
+  randomBtn.addEventListener("click", getRandom);
+};
