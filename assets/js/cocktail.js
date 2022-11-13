@@ -1,16 +1,20 @@
 const rand_btn = document.getElementById("rand_btn");
-const rand_container = document.getElementById("result");
-result.addEventListener("click", () => {
-    fetch ("www.thecocktaildb.com/api/json/v1/1/random.php")
+const search_btn = document.getElementById("search_btn");
+let APIKey = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+if(search_btn){
+search_btn.addEventListener("click", () => {
+    fetch ("https://www.thecocktaildb.com/api/json/v1/1/random.php")
     .then(res => res.json())
     .then(res => {
         createResult(res.drinks[0]);
     });
-});
+})};
 
-document.addEventListener("DOMContentLoaded", () => {
-    fetch("www.thecocktaildb.com/api/json/v1/1/random.php")
+window.addEventListener("DOMContentLoaded", () => {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
 })
+
+
 
 const createResult = (result) => {
     const ingredients = [];

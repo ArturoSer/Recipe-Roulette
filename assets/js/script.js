@@ -71,3 +71,4 @@ getRandom();
 
 searchBtn.addEventListener("click", searchMeal);
 randomBtn.addEventListener("click", getRandom);
+
