@@ -29,19 +29,23 @@
           <button class="search-btn" type="submit" id="search-btn">Search</button>
           <button class="random-btn" id="rand-btn">I'M FEELING LUCKY!</button>
         </div>
-        <!-- <button id="start">I'M FEELING LUCKY!</button> -->
-        </form>
       </div>
     </div>
-    <!-- API results fed into these divs -->
-    <!-- <div id="result" class="container center-align"> -->
-
-    <div> placeholder </div>
-    <div> placeholder </div>
-    <div> placeholder </div>
-    <div>
-      <img class="btm-pic" src="chef.jpg">
-    </div>
+    
+    <!-- Results Display -->
+    <section id="mealDisplay" class="container">
+      <div class="column">
+        <h1 class="mealName"></h1>
+        <p class="meal__area text-gray"></p>
+      </div>
+      <div class="meal__details">
+        <img class="meal__img mb-1">
+        <h4 class="subtitle">Ingredients</h4>
+        <ul class="meal__ingredients mb-1"></ul>
+        <h4 class="subtitle">Instructions</h4>
+        <p class="meal__instructions mb-1"></p>
+      </div>
+    </section>
     <footer class="navbar">
       <a href="#home">Home</a>
       <a href="#saved">Saved Recipes</a>
