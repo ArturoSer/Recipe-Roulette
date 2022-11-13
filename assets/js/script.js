@@ -46,7 +46,7 @@ function createMeal(meals) {
   }
 }
 
-const mealName = mealDisplay.querySelector('.mealName')
+const mealName = mealDisplay.querySelector('mealName')
 const mealArea = mealDisplay.querySelector('.meal__area')
 const mealImg = mealDisplay.querySelector('.meal__img')
 const mealIngredients = mealDisplay.querySelector('.meal__ingredients')
