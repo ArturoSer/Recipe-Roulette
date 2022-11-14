@@ -4,8 +4,14 @@ var startEl = document.getElementById("#start");
 const randomBtn = document.querySelector("#rand-btn");
 const searchBtn = document.querySelector("#search-btn");
 
+const mealName = mealDisplay.querySelector('.mealName')
+const mealArea = mealDisplay.querySelector('.meal__area')
+const mealImg = mealDisplay.querySelector('.meal__img')
+const mealIngredients = mealDisplay.querySelector('.meal__ingredients')
+const mealInstructions = mealDisplay.querySelector('.meal__instructions')
 
-function getMeal() {
+
+const getMeal = meal => {
   const ingredients = []
   // Get ingredients
   for (let i = 1; i <= 20; i++) {
@@ -18,6 +24,14 @@ function getMeal() {
       break;
     }
   }
+  
+  mealName.innerText = meal.strMeal
+  mealArea.innerText = meal.strArea
+  mealImg.src = meal.strMealThumb
+  mealImg.alt = meal.strMeal
+  let ingredientLists = ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')
+  mealIngredients.innerHTML = ingredientLists
+  mealInstructions.innerText = meal.strInstructions
 }
 
 // Fetching response from API
@@ -29,32 +43,6 @@ function randomMeal() {
       })
       displayFoods();
 }
-
-function searchMeal() {
-  fetch("www.themealdb.com/api/json/v1/1/search.php?s= VALUE")
-    .then((res) => res.json())
-    .then(res => {
-      getMeal(res.meals[0])
-    })
-    displayFoods();
-}
-
-function displayFoods(meal) {
-  const mealName = mealDisplay.querySelector('.mealName')
-  const mealArea = mealDisplay.querySelector('.meal__area')
-  const mealImg = mealDisplay.querySelector('.meal__img')
-  const mealIngredients = mealDisplay.querySelector('.meal__ingredients')
-  const mealInstructions = mealDisplay.querySelector('.meal__instructions')
-
-  mealName.innerText = meal.strMeal
-  mealArea.innerText = meal.strArea
-  mealImg.src = meal.strMealThumb
-  mealImg.alt = meal.strMeal
-  let ingredientLists = ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')
-  mealIngredients.innerHTML = ingredientLists
-  mealInstructions.innerText = meal.strInstructions
-}
-
 
 // calls for a random meal when the page is first loaded
 randomMeal();
