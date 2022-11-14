@@ -9,7 +9,6 @@ const mealImg = mealDisplay.querySelector('.meal__img')
 const mealIngredients = mealDisplay.querySelector('.meal__ingredients')
 const mealInstructions = mealDisplay.querySelector('.meal__instructions')
 
-
 const getMeal = meal => {
   const ingredients = []
   // Get ingredients
@@ -23,7 +22,7 @@ const getMeal = meal => {
       break;
     }
   }
-
+  
   mealName.innerText = meal.strMeal
   mealArea.innerText = meal.strArea
   mealImg.src = meal.strMealThumb
