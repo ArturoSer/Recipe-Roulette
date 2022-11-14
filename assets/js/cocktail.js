@@ -32,6 +32,14 @@ const createRandom = (random) => {
             </div>
             <div id="seven">
                <h4>${random.strDrink}</h4>
+			   <div class="hearts">
+			   <button id="heartBtn">
+			   <i class ="fa fa-solid fa-heart"></i></button>
+			   <input type="number" id="inputHeart" value="0" name=""></input>
+			   </div>
+			   <div class="container">
+			   <button class="clipboard">
+			   <i class="fas fa-share"></i></button>
 			 	<p><strong>Category:</strong> ${random.strCategory}</p>
 				<p><strong>Glass type:</strong> ${random.strGlass}</p>
 				<p><strong>Type:</strong> ${random.strAlcoholic}</p>
@@ -43,9 +51,24 @@ const createRandom = (random) => {
 				<p>${random.strInstructions}</p>
 				
 			</div>
-		</div>
 	`;
 
+
 	random_container.innerHTML = newInnerHTML;
+
+	const clipboard = document.querySelector(".clipboard");
+	clipboard.onclick = () => {
+		navigator.clipboard.writeText(window.location.href);
+	}	
+	
+	let heartbtn = document.querySelector('#heartBtn');
+	let inputHeart = document.querySelector("#inputHeart");
+
+	heartbtn.addEventListener("click", () => {
+		inputHeart.value = parseInt(inputHeart.value) + 1;
+	})
+
+	
+	
 	
 }
