@@ -1,6 +1,30 @@
 # Recipe-Roulette
 
+Recipe Roulette allows the user to randomly generate meals and cocktail recipes using server side API and save their favorite generated recipes 
+
 ## User Story
-As an adventurous cook
-I want to use recipe roulette to help me choose something to cook
-So that they can create a random meal
+ As an adventurous homecook, 
+ I want help choosing exciting dinner and cocktail recipes 
+ so I can cook something new
+
+## Instalation
+* Clone with repository: https://github.com/ArturoSer/Recipe-Roulette
+    * git clone: git@github.com:ArturoSer/Recipe-Roulette.git
+* Open Repo with VS Code or IDE of your choice
+* Open Index.html with Live Server to inspect Code or visit: PLACE HOLDER 
+
+## Demo
+
+## Resources 
+* For CSS framework
+* Serverside APIS: 
+    * mealDB: https://www.themealdb.com/api.php
+    * cocktailDB: https://www.thecocktaildb.com/
+
+## Directions for Future Development 
+
+## Contributors 
+* Arturo Serrato: https://github.com/ArturoSer
+* Hunter Harvell: https://github.com/HunterHarvell
+* Jon Mauch: https://github.com/jsmauch80
+* Genevieve Ferrari: https://github.com/gjferrari
