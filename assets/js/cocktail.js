@@ -64,11 +64,19 @@ const createRandom = (random) => {
 	let heartbtn = document.querySelector('#heartBtn');
 	let inputHeart = document.querySelector("#inputHeart");
 
-	heartbtn.addEventListener("click", () => {
+	heartbtn.addEventListener("click", function() {
+		if(count < 24) {
+			count++;
+			localStorage.setItem("count", count);
+		}
 		inputHeart.value = parseInt(inputHeart.value) + 1;
-	})
+	});
 
-	
+
+var count = localStorage.getItem("count");
+
+
+
 	
 	
 }
