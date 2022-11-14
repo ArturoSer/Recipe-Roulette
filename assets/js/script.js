@@ -8,16 +8,39 @@ const searchBtn = document.querySelector("#search-btn");
 function randomMeal() {
   fetch("https://www.themealdb.com/api/json/v1/1/random.php")
       .then((res) => res.json())
-      .then((data) => displayFoods(data.meals));
+      .then(res => {
+        getMeal(res.meals[0])
+      })
+      displayFoods();
 }
 
 function searchMeal() {
   fetch("www.themealdb.com/api/json/v1/1/search.php?s= VALUE")
     .then((res) => res.json())
-    .then((data) => displayFoods(data.meals));
+    .then(res => {
+      getMeal(res.meals[0])
+    })
+    displayFoods();
+}
+
+
+function getMeal(meal) {
+  const ingredients = []
+  // Get ingredients
+  for (let i = 1; i <= 20; i++) {
+    if (meal[`strIngredient${i}`]) {
+      ingredients.push(
+        `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
+      );
+    } else {
+      // Stops when complete
+      break;
+    }
+  }
 }
 
 function displayFoods() {
+
   const mealName = mealDisplay.querySelector('.mealName')
   const mealArea = mealDisplay.querySelector('.meal__area')
   const mealImg = mealDisplay.querySelector('.meal__img')
@@ -42,4 +65,3 @@ randomMeal();
 searchBtn.addEventListener("click", searchMeal);
 
 randomBtn.addEventListener("click", randomMeal);
-
