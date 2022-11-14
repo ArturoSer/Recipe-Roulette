@@ -9,48 +9,40 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-  <body>
-    <div class="topnav">
-      <a class="active" href="#home">Home</a>
-      <a href="saved-recipes.html">Saved Recipes</a>
-      <a href="cocktail.html">Cocktails</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="container">
-      <!-- add a link to the saved recipes here -->
-      <h1 id="home">Recipe Roulette</h1>
-      <div id="homeDisplay" class="center-align">
-        <div class="flex">
-          <form class="flex" id="submit">
-          <button class="random-btn" id="rand-btn">I'M FEELING LUCKY!</button>
-        </div>
+
+<body>
+  <div class="topnav">
+    <a class="active" href="#home">Recipes</a>
+    <a href="cocktail.html">Cocktails</a>
+    <a href="saved-recipes.html">Saved Recipes</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="container">
+    <!-- add a link to the saved recipes here -->
+    <h1 id="home">Recipe Roulette</h1>
+    <div id="homeDisplay" class="center-align">
+      <div class="flex">
+        <button class="random-btn" id="rand-btn">I'M FEELING LUCKY!</button>
       </div>
     </div>
-    
-    <!-- Results Display -->
-    <section id="mealDisplay" class="container">
-      <div class="column">
-        <h1 class="mealName"></h1>
-        <p class="meal__area text-gray"></p>
-      </div>
-      <div class="meal__details">
-        <img class="meal__img mb-1">
-        <h4 class="subtitle">Ingredients</h4>
-        <ul class="meal__ingredients mb-1"></ul>
-        <h4 class="subtitle">Instructions</h4>
-        <p class="meal__instructions mb-1"></p>
-      </div>
-    </section>
-    <footer class="navbar">
-      <a href="#home">Home</a>
-      <a href="saved-recipes.html">Saved Recipes</a>
-      <a href="cocktail.html">Cocktails</a>
-      <a href="#contact">Contact</a>
-      <p class="right-align">Copyright &copy; 2022, Our Team, All rights reserved</p>
-    </footer>
-    <!-- <p>Copyright &copy; 2022, Our Team, All rights reserved</p> -->
-    <script src="./assets/js/materialize.js"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
+  </div>
   
+  <!-- Results Display -->
+  <section id="mealDisplay" class="container">
+    <div class="column">
+      <h1 class="mealName"></h1>
+      <p class="meal__area text-gray"></p>
+    </div>
+    <div class="meal__details">
+      <img class="meal__img mb-1">
+      <h4 class="subtitle">Ingredients</h4>
+      <ul class="meal__ingredients mb-1"></ul>
+      <h4 class="subtitle">Instructions</h4>
+      <p class="meal__instructions mb-1"></p>
+    </div>
+  </section>
+  
+<script src="./assets/js/materialize.js"></script>
+<script src="./assets/js/script.js"></script>
+</body>
 </html>
