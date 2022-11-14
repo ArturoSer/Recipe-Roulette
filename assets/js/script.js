@@ -1,15 +1,13 @@
-var homeEl = document.getElementById("#homeDisplay");
-var displayEl = document.getElementById("#display");
-var startEl = document.getElementById("#start");
+const homeEl = document.getElementById("#homeDisplay");
+const displayEl = document.getElementById("#display");
+const startEl = document.getElementById("#start");
 const randomBtn = document.querySelector("#rand-btn");
 const searchBtn = document.querySelector("#search-btn");
-
 const mealName = mealDisplay.querySelector('.mealName')
 const mealArea = mealDisplay.querySelector('.meal__area')
 const mealImg = mealDisplay.querySelector('.meal__img')
 const mealIngredients = mealDisplay.querySelector('.meal__ingredients')
 const mealInstructions = mealDisplay.querySelector('.meal__instructions')
-
 
 const getMeal = meal => {
   const ingredients = []
@@ -38,10 +36,10 @@ const getMeal = meal => {
 function randomMeal() {
   fetch("https://www.themealdb.com/api/json/v1/1/random.php")
       .then((res) => res.json())
-      .then(res => {
-        var meal = getMeal(res.meals[0])
+      .then(data => {
+        getMeal(data.meals[0]);
+        console.log(data.meals[0]);
       })
-      displayFoods();
 }
 
 // calls for a random meal when the page is first loaded
@@ -50,5 +48,4 @@ randomMeal();
 // Adding event listener for when random button is clicked
 
 searchBtn.addEventListener("click", searchMeal);
-
 randomBtn.addEventListener("click", randomMeal);
