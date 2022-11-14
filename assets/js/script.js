@@ -4,27 +4,8 @@ var startEl = document.getElementById("#start");
 const randomBtn = document.querySelector("#rand-btn");
 const searchBtn = document.querySelector("#search-btn");
 
-// Fetching response from API
-function randomMeal() {
-  fetch("https://www.themealdb.com/api/json/v1/1/random.php")
-      .then((res) => res.json())
-      .then(res => {
-        getMeal(res.meals[0])
-      })
-      displayFoods();
-}
 
-function searchMeal() {
-  fetch("www.themealdb.com/api/json/v1/1/search.php?s= VALUE")
-    .then((res) => res.json())
-    .then(res => {
-      getMeal(res.meals[0])
-    })
-    displayFoods();
-}
-
-
-function getMeal(meal) {
+function getMeal() {
   const ingredients = []
   // Get ingredients
   for (let i = 1; i <= 20; i++) {
@@ -39,8 +20,26 @@ function getMeal(meal) {
   }
 }
 
-function displayFoods() {
+// Fetching response from API
+function randomMeal() {
+  fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+      .then((res) => res.json())
+      .then(res => {
+        var meal = getMeal(res.meals[0])
+      })
+      displayFoods();
+}
 
+function searchMeal() {
+  fetch("www.themealdb.com/api/json/v1/1/search.php?s= VALUE")
+    .then((res) => res.json())
+    .then(res => {
+      getMeal(res.meals[0])
+    })
+    displayFoods();
+}
+
+function displayFoods(meal) {
   const mealName = mealDisplay.querySelector('.mealName')
   const mealArea = mealDisplay.querySelector('.meal__area')
   const mealImg = mealDisplay.querySelector('.meal__img')
