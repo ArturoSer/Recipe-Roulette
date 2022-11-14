@@ -1,11 +1,15 @@
-var homeEl = document.getElementById("#homeDisplay");
-var displayEl = document.getElementById("#display");
-var startEl = document.getElementById("#start");
+const homeEl = document.getElementById("#homeDisplay");
+const displayEl = document.getElementById("#display");
+const startEl = document.getElementById("#start");
 const randomBtn = document.querySelector("#rand-btn");
 const searchBtn = document.querySelector("#search-btn");
+const mealName = mealDisplay.querySelector('.mealName')
+const mealArea = mealDisplay.querySelector('.meal__area')
+const mealImg = mealDisplay.querySelector('.meal__img')
+const mealIngredients = mealDisplay.querySelector('.meal__ingredients')
+const mealInstructions = mealDisplay.querySelector('.meal__instructions')
 
-
-function getMeal() {
+const getMeal = meal => {
   const ingredients = []
   // Get ingredients
   for (let i = 1; i <= 20; i++) {
@@ -18,34 +22,7 @@ function getMeal() {
       break;
     }
   }
-}
-
-// Fetching response from API
-function randomMeal() {
-  fetch("https://www.themealdb.com/api/json/v1/1/random.php")
-      .then((res) => res.json())
-      .then(res => {
-        var meal = getMeal(res.meals[0])
-      })
-      displayFoods();
-}
-
-function searchMeal() {
-  fetch("www.themealdb.com/api/json/v1/1/search.php?s= VALUE")
-    .then((res) => res.json())
-    .then(res => {
-      getMeal(res.meals[0])
-    })
-    displayFoods();
-}
-
-function displayFoods(meal) {
-  const mealName = mealDisplay.querySelector('.mealName')
-  const mealArea = mealDisplay.querySelector('.meal__area')
-  const mealImg = mealDisplay.querySelector('.meal__img')
-  const mealIngredients = mealDisplay.querySelector('.meal__ingredients')
-  const mealInstructions = mealDisplay.querySelector('.meal__instructions')
-
+  
   mealName.innerText = meal.strMeal
   mealArea.innerText = meal.strArea
   mealImg.src = meal.strMealThumb
@@ -55,6 +32,15 @@ function displayFoods(meal) {
   mealInstructions.innerText = meal.strInstructions
 }
 
+// Fetching response from API
+function randomMeal() {
+  fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+      .then((res) => res.json())
+      .then(data => {
+        getMeal(data.meals[0]);
+        console.log(data.meals[0]);
+      })
+}
 
 // calls for a random meal when the page is first loaded
 randomMeal();
@@ -62,5 +48,4 @@ randomMeal();
 // Adding event listener for when random button is clicked
 
 searchBtn.addEventListener("click", searchMeal);
-
 randomBtn.addEventListener("click", randomMeal);
