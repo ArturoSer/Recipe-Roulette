@@ -33,6 +33,7 @@ function displayFoods() {
   mealInstructions.innerText = meal.strInstructions
 }
 
+
 // calls for a random meal when the page is first loaded
 randomMeal();
 
