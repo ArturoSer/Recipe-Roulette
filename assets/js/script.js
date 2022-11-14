@@ -9,6 +9,7 @@ function randomMeal() {
   fetch("https://www.themealdb.com/api/json/v1/1/random.php")
       .then((res) => res.json())
       .then((data) => displayFoods(data.meals));
+      console.log(data);
 }
 
 function searchMeal() {
