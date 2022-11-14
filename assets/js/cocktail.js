@@ -65,7 +65,7 @@ const createRandom = (random) => {
 	let inputHeart = document.querySelector("#inputHeart");
 
 	heartbtn.addEventListener("click", function() {
-		if(count < 24) {
+		if(count < 100) {
 			count++;
 			localStorage.setItem("count", count);
 		}
