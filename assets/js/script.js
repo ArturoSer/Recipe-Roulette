@@ -42,14 +42,6 @@ function randomMeal() {
       })
 }
 
-function searchMeal() {
-  fetch("www.themealdb.com/api/json/v1/1/search.php?s= VALUE")
-    .then((res) => res.json())
-    .then(data => {
-      getMeal(data.meals[0])
-    })
-}
-
 // calls for a random meal when the page is first loaded
 randomMeal();
 
