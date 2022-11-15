@@ -4,7 +4,7 @@ Recipe Roulette allows the user to randomly generate meals and cocktail recipes 
 
 ## User Story
  As an adventurous homecook, 
- I want help choosing exciting dinner and cocktail recipes 
+ I want help choosing exciting meal and cocktail recipes 
  so I can cook something new
 
 ## Instalation
@@ -16,7 +16,8 @@ Recipe Roulette allows the user to randomly generate meals and cocktail recipes 
 ## Demo
 
 ## Resources 
-* For CSS framework
+* CSS framework: 
+    * Materialize: https://materializecss.com/
 * Serverside APIS: 
     * mealDB: https://www.themealdb.com/api.php
     * cocktailDB: https://www.thecocktaildb.com/
