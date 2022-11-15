@@ -11,7 +11,7 @@ Recipe Roulette allows the user to randomly generate meals and cocktail recipes 
 * Clone with repository: https://github.com/ArturoSer/Recipe-Roulette
     * git clone: git@github.com:ArturoSer/Recipe-Roulette.git
 * Open Repo with VS Code or IDE of your choice
-* Open Index.html with Live Server to inspect Code or visit: PLACE HOLDER 
+* Open Index.html with Live Server to inspect Code or visit: https://arturoser.github.io/Recipe-Roulette/
 
 ## Mockup
 * The following picture shows the web application's functionality:
