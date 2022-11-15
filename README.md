@@ -13,7 +13,10 @@ Recipe Roulette allows the user to randomly generate meals and cocktail recipes 
 * Open Repo with VS Code or IDE of your choice
 * Open Index.html with Live Server to inspect Code or visit: PLACE HOLDER 
 
-## Demo
+## Mockup
+- The following animation shows the web application's functionality:
+
+![A website with a 'I'm feeling luck' button followed by a recipe for roast beef](./assets/images/homepage.png)
 
 ## Resources 
 * CSS framework: 
